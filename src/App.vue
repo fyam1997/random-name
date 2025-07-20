@@ -23,9 +23,33 @@ export default defineComponent({
 </script>
 
 <template>
-    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-        <h3 style="margin: 0; min-width: 200px;">{{ username }}</h3>
-        <button @click="handleCopy" :disabled="!username">Copy</button>
+    <div class="center-page">
+        <div class="username-row" v-if="username">
+            <h3 class="username">{{ username }}</h3>
+            <button @click="handleCopy">Copy</button>
+        </div>
+        <button @click="handleGenerate">Generate Username</button>
     </div>
-    <button @click="handleGenerate">Generate Username</button>
 </template>
+
+<style>
+.center-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.username-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.username {
+    margin: 0;
+    min-width: 200px;
+}
+</style>
