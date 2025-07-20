@@ -1,16 +1,16 @@
 <script lang="ts">
-import {fakerEN} from '@faker-js/faker'
-import {defineComponent} from 'vue'
+import { fakerEN } from "@faker-js/faker"
+import { defineComponent } from "vue"
 
 export default defineComponent({
     data() {
         return {
-            username: '',
+            username: "",
         }
     },
     methods: {
         generateRandomUserName() {
-            return `${fakerEN.word.adjective()}-${fakerEN.word.noun()}-${fakerEN.number.int({max: 9999})}`
+            return `${fakerEN.word.adjective()}-${fakerEN.word.noun()}-${fakerEN.number.int({ max: 9999 })}`
         },
         handleGenerate() {
             this.username = this.generateRandomUserName()
