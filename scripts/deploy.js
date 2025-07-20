@@ -14,10 +14,10 @@ ghpages
         },
         function (err) {
             if (err) {
-                console.error(err)
+                console.error("Deploy Fail:", err)
                 process.exit(1)
             } else {
-                console.error("Success")
+                console.log("Success")
             }
         },
     )
